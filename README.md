@@ -1,6 +1,6 @@
 # janet-ulid
 
-This is a ULID implementation in pure Janet.
+This is a [ULID](https://github.com/ulid/spec) implementation in pure Janet.
 
 ## Installation
 
@@ -18,21 +18,11 @@ Alternatively you can put this into your project's dependency tuple:
 
 ## API
 
-The `ulid` module that is part of this library exposes a single function,
-called `make`. It returns a ULID in `string` form.
+The `ulid` module that is part of this library exposes a single function, called `make`. It returns a ULID in `string` form.
 
 ```janet
 (import ulid)
 (def my-new-id (ulid/make))
-```
-
-## Tests
-
-Unit tests can be found in the `test` folder. They've been written with
-[judge](https://github.com/ianthehenry/judge). You can install it with:
-
-```sh
-jpm install https://github.com/ianthehenry/judge
 ```
 
 ## License
