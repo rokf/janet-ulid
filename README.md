@@ -1,10 +1,6 @@
 # janet-ulid
 
-This is a [ULID](https://github.com/ulid/spec) implementation in pure Janet. [ulid.lua](https://github.com/Tieske/ulid.lua) was used as a reference.
-
-> [!WARNING]
->
-> It is not (yet) using a cryptographically safe random number generator. See [#1](https://github.com/rokf/janet-ulid/issues/1) for details.
+This is a [ULID](https://github.com/ulid/spec) implementation in pure Janet. [ulid.lua](https://github.com/Tieske/ulid.lua) was used as a reference. It uses [os/cryptorand](https://janet-lang.org/api/index.html#os/cryptorand) as a source of randomness.
 
 ## Installation
 

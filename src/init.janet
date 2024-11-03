@@ -11,17 +11,10 @@
                 (set millis (/ (- millis m) 32))))
   (string/join (reverse res)))
 
-(defn- encode-random []
-  (def res @[])
-  (for i 0 16 (do
-                (array/push res (get encoding (math/floor (* 32 (math/random)))))))
-  (string/join res))
-
-# @TODO switch to a safer implementation
-# (defn- encode-random-crypto []
-#   (string/join (map |(get encoding $) (map |(+ ;$) (partition 2 (map |(scan-number (string/format "0x%c" $)) (string/join (map |(string/format "%02x" $) (os/cryptorand 16)))))))))
+(defn- encode-random-crypto []
+  (string/join (map |(get encoding (mod $ 32)) (os/cryptorand 16))))
 
 (defn make
   "Returns a new ULID in string form."
   []
-  (string (encode-time) (encode-random)))
+  (string (encode-time) (encode-random-crypto)))
